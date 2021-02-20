@@ -12,6 +12,7 @@
   }
 
   let response = getData(endpoint);
+  $: console.log(response);
 </script>
 
 {#await response}
@@ -20,11 +21,19 @@
   <div in:fade>
     <!-- Dummy Tempalate -->
     {#each data as item}
-      <p>{JSON.stringify(item)}</p>
-      <br />
+      <article>
+        <p>{item.name} - {item.company.name}</p>
+        <p>{item.address.city}, NC {item.address.zipcode}</p>
+      </article>
     {/each}
     <!-- End Dummy Tempalate -->
   </div>
 {:catch}
   <Error />
 {/await}
+
+<style>
+  article {
+    margin: 1em 0;
+  }
+</style>
