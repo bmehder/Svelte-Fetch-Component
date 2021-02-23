@@ -12,7 +12,6 @@
   }
 
   let response = getData(endpoint);
-  $: console.log(response);
 </script>
 
 {#await response}
