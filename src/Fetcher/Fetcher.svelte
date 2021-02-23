@@ -19,21 +19,8 @@
   <Spinner size="168" speed="750" color="#307ad5" thickness="3" gap="42" />
 {:then data}
   <div in:fade>
-    <!-- Dummy Tempalate -->
-    {#each data as item}
-      <article>
-        <p>{item.name} - {item.company.name}</p>
-        <p>{item.address.city}, NC {item.address.zipcode}</p>
-      </article>
-    {/each}
-    <!-- End Dummy Tempalate -->
+    {JSON.stringify(data)}
   </div>
 {:catch}
   <Error />
 {/await}
-
-<style>
-  article {
-    margin: 1em 0;
-  }
-</style>
