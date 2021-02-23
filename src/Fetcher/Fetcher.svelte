@@ -17,9 +17,7 @@
 {#await response}
   <Spinner size="168" speed="750" color="#307ad5" thickness="3" gap="42" />
 {:then data}
-  <div in:fade>
-    {JSON.stringify(data)}
-  </div>
+  <div in:fade>{JSON.stringify(data)}</div>
 {:catch}
   <Error />
 {/await}
